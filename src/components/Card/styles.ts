@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   container: {
-    height: 100,
+    height: 155,
     width: "100%",
     backgroundColor: "#EFF1F3",
     flexDirection: "row",
@@ -14,7 +14,7 @@ export const styles = StyleSheet.create({
   },
 
   content: {
-    width: "20%",
+    width: "23%",
     height: "100%",
     justifyContent: "center",
     alignItems: "center",
@@ -28,21 +28,17 @@ export const styles = StyleSheet.create({
   content_info: {
     height: "100%",
     width: "100%",
-    alignItems: "center",
-    justifyContent: "space-around",
+    marginHorizontal: 20,
   },
 
   text: {
     maxWidth: 200,
+    marginBottom: 20,
   },
 
-  button: {
-    alignItems: "center",
-    justifyContent: "center",
-    paddingVertical: 5,
-    paddingHorizontal: 10,
-    borderRadius: 2,
-    backgroundColor: "dodgerblue",
+  stars: {
+    width: 20,
+    height: 20,
   },
 
   container_modal: {

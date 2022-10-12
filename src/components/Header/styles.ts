@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-    backgroundColor: "#9c538c",
+    backgroundColor: "#c66ace",
     height: "13%",
     display: "flex",
     alignItems: "center",
@@ -22,7 +22,7 @@ export const styles = StyleSheet.create({
     position: "absolute",
     width: "100%",
     height: "100%",
-    backgroundColor: "rgba(0, 0, 0, .2)",
+    backgroundColor: "rgba(0, 0, 0, .15)",
   },
 
   text: {
