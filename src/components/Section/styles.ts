@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
   content: {
     height: "100%",
     flexDirection: "row",
-    justifyContent: "center",
+    justifyContent: "space-evenly",
     alignItems: "center",
   },
 
@@ -26,5 +26,20 @@ export const styles = StyleSheet.create({
     height: "100%",
     justifyContent: "center",
     backgroundColor: "rgba(0, 0, 0, .7)",
+  },
+
+  content_modal_cart: {
+    height: "80%",
+    backgroundColor: "#fff",
+    position: "relative",
+  },
+
+  close_cart: {
+    backgroundColor: "red",
+    position: "absolute",
+    left: 0,
+    padding: 10,
+    zIndex: 2,
+    borderRadius: 1,
   },
 });

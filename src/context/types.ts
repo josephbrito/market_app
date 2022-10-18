@@ -20,3 +20,13 @@ export const DEFAULT_VALUE = {
   data: [],
   setData: () => {},
 };
+
+export interface IPropsCart {
+  cartData: IData[];
+  setCartData: (data: IData[]) => void;
+}
+
+export const DEFAULT_VALUE_CART = {
+  cartData: [],
+  setCartData: () => {},
+};

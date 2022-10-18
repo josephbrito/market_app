@@ -32,13 +32,12 @@ export const styles = StyleSheet.create({
   },
 
   text: {
-    maxWidth: 200,
     marginBottom: 20,
   },
 
   stars: {
-    width: 20,
-    height: 20,
+    width: 18,
+    height: 17,
   },
 
   container_modal: {

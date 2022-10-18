@@ -6,14 +6,18 @@ import { useData } from "../../context";
 import { callData } from "../../services";
 
 import Icon from "../../assets/logo.png";
+import CartIcon from "../../assets/cart.png";
 
 import { styles } from "./styles";
 import { IData } from "../../context/types";
+import Cart from "../Cart";
+import Total from "../Total";
 
 const Section: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [cartIsOpen, setCartIsOpen] = useState<boolean>(false);
 
-  const { data, setData } = useData();
+  const { setData } = useData();
 
   const setCategory = async (category: string) => {
     if (category === "all") {
@@ -34,6 +38,33 @@ const Section: React.FC = () => {
         <Pressable onPress={() => setIsOpen(true)}>
           <Image source={Icon} style={styles.image} />
         </Pressable>
+
+        <Pressable onPress={() => setCartIsOpen(true)}>
+          <Image source={CartIcon} style={{ width: 35, height: 30 }} />
+        </Pressable>
+
+        {/* Modal to cart */}
+        <Modal
+          visible={cartIsOpen}
+          onRequestClose={() => setCartIsOpen(!cartIsOpen)}
+          animationType={"slide"}
+          transparent={false}
+        >
+          <View style={styles.container_modal}>
+            <View style={styles.content_modal_cart}>
+              <Pressable
+                onPress={() => setCartIsOpen(!cartIsOpen)}
+                style={styles.close_cart}
+              >
+                <Text style={{ color: "white" }}>X</Text>
+              </Pressable>
+              <Cart />
+              <Total />
+            </View>
+          </View>
+        </Modal>
+
+        {/* Modal to filter category */}
         <Modal
           visible={isOpen}
           animationType="fade"
