@@ -10,4 +10,4 @@
 
 ## Demonstration:
 
-![preview](https://user-images.githubusercontent.com/84200694/195423960-6adc5aba-270d-47fa-af99-458eb2de62ba.gif)
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/84200694/196808314-929df3a1-9a29-48c5-94f1-6b26c29af2d9.gif)
