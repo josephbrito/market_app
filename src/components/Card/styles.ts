@@ -90,4 +90,11 @@ export const styles = StyleSheet.create({
     fontWeight: "bold",
     marginVertical: 10,
   },
+
+  removeCart: {
+    alignSelf: "center",
+    borderWidth: 1,
+    padding: 4,
+    borderColor: "red",
+  },
 });

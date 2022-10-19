@@ -20,6 +20,8 @@ import FourStar from "../../assets/four.png";
 import FiveStar from "../../assets/five.png";
 
 import ButtonAdd from "../ButtonAdd";
+import { useCart } from "../../context/cart";
+import { usePrice } from "../../context/total";
 
 interface IProps extends IData {
   btn: boolean;
@@ -36,7 +38,31 @@ const Card: React.FC<IProps> = ({
   btn,
 }: IProps) => {
   const { uniqueId, setUniqueId } = useId();
+  const { cartData, setCartData } = useCart();
+  const { currentPrice, setCurrentPrice } = usePrice();
+
   const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const handleRemoveCart = () => {
+    const filtredCart = cartData.filter((obj) => {
+      const filtredId = [...uniqueId];
+      const idValue = filtredId.indexOf(obj.id);
+
+      delete filtredId[idValue];
+
+      const filtredPrice = [...currentPrice];
+      const priceValue = filtredPrice.indexOf(obj.price);
+
+      filtredPrice[priceValue] = 0;
+
+      setCurrentPrice(filtredPrice);
+
+      setUniqueId(filtredId);
+      return obj.id !== id;
+    });
+
+    setCartData(filtredCart);
+  };
 
   return (
     <Pressable onPress={() => setIsOpen(true)}>
@@ -85,7 +111,9 @@ const Card: React.FC<IProps> = ({
               key={id}
             />
           ) : (
-            <Button title="Added" disabled={true} />
+            <Pressable onPress={handleRemoveCart} style={styles.removeCart}>
+              <Text style={{ color: "red" }}>Remove</Text>
+            </Pressable>
           )}
           <Modal
             animationType="slide"
